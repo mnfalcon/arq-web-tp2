@@ -6,8 +6,11 @@ import com.tp2.repository.EstudianteRepositoryImpl;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.logging.Logger;
 
 public class Main {
+
+    private static Logger log = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Example");
@@ -20,7 +23,7 @@ public class Main {
         em.getTransaction().commit();
 
         EstudianteRepositoryImpl estudianteRepository = new EstudianteRepositoryImpl(em);
-        System.out.println("[INFO] - " + estudianteRepository.getEstudiantes());
+        log.info(estudianteRepository.getEstudiantes().toString());
 
         em.close();
         emf.close();

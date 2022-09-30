@@ -15,6 +15,8 @@ public class CarreraEstudiante {
     private Long id;
     @ManyToOne
     private Estudiante estudiante;
+    @ManyToOne
+    private Carrera carrera;
     private int fechaIngreso;
     private int fechaEgreso;
 }

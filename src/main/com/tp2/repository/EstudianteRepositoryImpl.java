@@ -21,17 +21,21 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
     }
 
     @Override
-    public Estudiante getEstudianteByLibreta() {
-        return null;
+    public Estudiante getEstudianteByLibreta(Long id) {
+        TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e WHERE e.id = :id", Estudiante.class);
+        q.setParameter("id", id);
+        return q.getSingleResult();
     }
 
     @Override
     public List<Estudiante> getEstudiantesByGenero(char genero) {
-        return null;
+        TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e WHERE e.genero = :genero", Estudiante.class);
+        q.setParameter("genero", genero);
+        return q.getResultList();
     }
 
     @Override
-    public List<Estudiante> getEstudiantesByCarrerasXCiudad(Carrera carrera, String ciudad) {
+    public List<Estudiante> getEstudiantesByCarreraAndCiudad(Carrera carrera, String ciudad) {
         return null;
     }
 }

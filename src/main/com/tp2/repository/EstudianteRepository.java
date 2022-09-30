@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EstudianteRepository {
     public List<Estudiante> getEstudiantes();
-    public Estudiante getEstudianteByLibreta();
+    public Estudiante getEstudianteByLibreta(Long id);
     public List<Estudiante> getEstudiantesByGenero(char genero);
-    public List<Estudiante> getEstudiantesByCarrerasXCiudad(Carrera carrera, String ciudad);
+    public List<Estudiante> getEstudiantesByCarreraAndCiudad(Carrera carrera, String ciudad);
 }
