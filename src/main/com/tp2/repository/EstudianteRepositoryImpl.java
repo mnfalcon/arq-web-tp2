@@ -4,6 +4,7 @@ import com.tp2.model.Carrera;
 import com.tp2.model.Estudiante;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class EstudianteRepositoryImpl implements EstudianteRepository {
@@ -15,7 +16,8 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
 
     @Override
     public List<Estudiante> getEstudiantes() {
-        return null;
+        TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e", Estudiante.class);
+        return q.getResultList();
     }
 
     @Override

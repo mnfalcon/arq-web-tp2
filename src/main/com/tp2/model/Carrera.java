@@ -1,12 +1,14 @@
 package com.tp2.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Data /* Esta anotacion genera getters, setters, etc */
+@NoArgsConstructor
 public class Carrera {
 
     @Id
