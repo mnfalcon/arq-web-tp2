@@ -16,8 +16,8 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Example");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Estudiante e1 = new Estudiante("Johnny", "Depp", 40, 'M', 27555000, "Tandil");
-        Estudiante e2 = new Estudiante("Johnny", "TheWalrus", 8, 'M', 37000000, "Tandil");
+        Estudiante e1 = new Estudiante("Johnny", "Depp", 40, 'M', 27555000, "Tandil",1);
+        Estudiante e2 = new Estudiante("Johnny", "TheWalrus", 8, 'M', 37000000, "Tandil",1);
         em.persist(e1);
         em.persist(e2);
         em.getTransaction().commit();

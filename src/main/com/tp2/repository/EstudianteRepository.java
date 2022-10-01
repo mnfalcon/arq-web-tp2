@@ -9,5 +9,4 @@ public interface EstudianteRepository {
     public List<Estudiante> getEstudiantes();
     public Estudiante getEstudianteByLibreta(Long id);
     public List<Estudiante> getEstudiantesByGenero(char genero);
-    public List<Estudiante> getEstudiantesByCarreraAndCiudad(Carrera carrera, String ciudad);
 }

@@ -34,8 +34,4 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         return q.getResultList();
     }
 
-    @Override
-    public List<Estudiante> getEstudiantesByCarreraAndCiudad(Carrera carrera, String ciudad) {
-        return null;
-    }
 }
