@@ -1,0 +1,17 @@
+DOCKER (si uso powershell)
+	docker --version (para chequear que este instalado)
+	docker-componse -f msql.yml up
+
+MySQL benchwork
+	La contraseña es: contraseña
+	commands:
+		CREATE DATABASE db_integrador;
+		USE db_integrador;
+		(en caso de tener la base creada porque corrieron el script de JAVA eclipse)
+			DROP DATABASE db_integrador;
+			CREATE DATABASE db_integrador;
+			USE db_integrador;
+JAVA Eclipse:
+	JDBC_Integrador -> SRC -> (default package) -> Main.java -> clic derecho -> run as -> Java application.
+	Si tienen el docker andando, en MySQL benchwork ya van a aparecer las tablas creadas
+		SHOW tables;
