@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Data /* Esta anotacion genera getters, setters, etc */
 @NoArgsConstructor
+@Table(name="carrera_estudiante")
 public class CarreraEstudiante {
 
     @Id
