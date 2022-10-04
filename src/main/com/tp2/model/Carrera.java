@@ -1,9 +1,11 @@
 package com.tp2.model;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,6 +18,19 @@ public class Carrera {
     private Long id;
     private String nombreCarrera;
     @OneToMany (fetch = FetchType.LAZY)
+    @JoinColumn(name = "estudiante_id")
     private List<Estudiante> estudiantes;
 
+    public Carrera(String nombreCarrera) {
+        this.nombreCarrera = nombreCarrera;
+        this.estudiantes = new ArrayList<>();
+    }
+
+    public void addEstudiante(Estudiante e) {
+        estudiantes.add(e);
+    }
+
+    public void removeEstudiante(Estudiante e) {
+        estudiantes.remove(e);
+    }
 }

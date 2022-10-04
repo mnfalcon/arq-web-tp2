@@ -3,10 +3,8 @@ package com.tp2.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data /* Esta anotacion genera getters, setters, etc */
@@ -32,64 +30,5 @@ public class Estudiante {
         this.ciudadResidencia = ciudadResidencia;
         this.nroLibreta = nroLibreta;
     }
-
-	public String getNombres() {
-		return nombres;
-	}
-
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-
-	public char getGenero() {
-		return genero;
-	}
-
-	public void setGenero(char genero) {
-		this.genero = genero;
-	}
-
-	public String getCiudadResidencia() {
-		return ciudadResidencia;
-	}
-
-	public void setCiudadResidencia(String ciudadResidencia) {
-		this.ciudadResidencia = ciudadResidencia;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public int getDni() {
-		return dni;
-	}
-
-	public int getNroLibreta() {
-		return nroLibreta;
-	}
-
-	@Override
-	public String toString() {
-		return "Estudiante [id=" + id + ", nombres=" + nombres + ", apellido=" + apellido + ", edad=" + edad
-				+ ", genero=" + genero + ", dni=" + dni + ", ciudadResidencia=" + ciudadResidencia + ", nroLibreta="
-				+ nroLibreta + "]";
-	}
     
 }

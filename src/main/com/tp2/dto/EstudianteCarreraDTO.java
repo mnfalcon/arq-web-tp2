@@ -1,8 +1,6 @@
 package com.tp2.dto;
 
-import java.time.LocalDate;
-
-public class estudianteCarreraDTO {
+public class EstudianteCarreraDTO {
 	
 	private int DNI;
 	private String nombreEstudiante;
@@ -11,8 +9,8 @@ public class estudianteCarreraDTO {
 	private String nombreCarrera;
 	
 
-	public estudianteCarreraDTO(int DNI, String nombreEstudiante, String apellido, String ciudad,
-			String nombreCarrera) {
+	public EstudianteCarreraDTO(int DNI, String nombreEstudiante, String apellido, String ciudad,
+								String nombreCarrera) {
 		this.DNI = DNI;
 		this.nombreEstudiante = nombreEstudiante;
 		this.apellido = apellido;
