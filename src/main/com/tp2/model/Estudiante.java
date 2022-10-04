@@ -20,7 +20,12 @@ public class Estudiante {
     private int dni;
     private String ciudadResidencia;
     private int nroLibreta;
-
+    @ManyToMany
+    @JoinTable(
+            name = "carrera_estudiante",
+            joinColumns = @JoinColumn(name = "estudiante_id"),
+            inverseJoinColumns = @JoinColumn(name = "carrera_id"))
+    private List<Carrera> carreras;
     public Estudiante(String nombres, String apellido, int edad, char genero, int dni, String ciudadResidencia, int nroLibreta) {
         this.nombres = nombres;
         this.apellido = apellido;

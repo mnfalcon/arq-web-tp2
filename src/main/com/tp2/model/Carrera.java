@@ -17,8 +17,11 @@ public class Carrera {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreCarrera;
-    @OneToMany (fetch = FetchType.LAZY)
-    @JoinColumn(name = "estudiante_id")
+    @ManyToMany
+    @JoinTable(
+            name = "carrera_estudiante",
+            joinColumns = @JoinColumn(name = "carrera_id"),
+            inverseJoinColumns = @JoinColumn(name = "estudiante_id"))
     private List<Estudiante> estudiantes;
 
     public Carrera(String nombreCarrera) {
