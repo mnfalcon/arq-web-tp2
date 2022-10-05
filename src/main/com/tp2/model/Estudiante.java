@@ -3,10 +3,8 @@ package com.tp2.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data /* Esta anotacion genera getters, setters, etc */
@@ -21,13 +19,34 @@ public class Estudiante {
     private char genero;
     private int dni;
     private String ciudadResidencia;
-
-    public Estudiante(String nombres, String apellido, int edad, char genero, int dni, String ciudadResidencia) {
+    private int nroLibreta;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "carrera_estudiante",
+            joinColumns = @JoinColumn(name = "estudiante_id"),
+            inverseJoinColumns = @JoinColumn(name = "carrera_id"))
+    private List<Carrera> carreras;
+    public Estudiante(String nombres, String apellido, int edad, char genero, int dni, String ciudadResidencia, int nroLibreta) {
         this.nombres = nombres;
         this.apellido = apellido;
         this.edad = edad;
         this.genero = genero;
         this.dni = dni;
         this.ciudadResidencia = ciudadResidencia;
+        this.nroLibreta = nroLibreta;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "id=" + id +
+                ", nombres='" + nombres + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", genero=" + genero +
+                ", dni=" + dni +
+                ", ciudadResidencia='" + ciudadResidencia + '\'' +
+                ", nroLibreta=" + nroLibreta +
+                '}';
     }
 }

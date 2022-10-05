@@ -19,6 +19,12 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e", Estudiante.class);
         return q.getResultList();
     }
+    @Override
+    public List<Estudiante> getEstudiantesByName() {
+        TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e ORDER BY e.nombres", Estudiante.class);
+        return q.getResultList();
+    }
+
 
     @Override
     public Estudiante getEstudianteByLibreta(Long id) {
@@ -34,8 +40,4 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         return q.getResultList();
     }
 
-    @Override
-    public List<Estudiante> getEstudiantesByCarreraAndCiudad(Carrera carrera, String ciudad) {
-        return null;
-    }
 }
