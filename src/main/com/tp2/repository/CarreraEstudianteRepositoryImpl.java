@@ -23,7 +23,7 @@ public class CarreraEstudianteRepositoryImpl implements CarreraEstudianteReposit
 	public List<EstudianteCarreraDTO> getEstudiantesByCarreraAndCiudad(Long idCarrera, String ciudad) {
 		List<EstudianteCarreraDTO> estudiantes = this.em.createQuery(
 				"SELECT new com.tp2.dto.EstudianteCarreraDTO(e.DNI, e.nombres, e.apellido, e.ciudadResidencia, c.nombreCarrera) "
-						+ "FROM Estudiante e " + "JOIN CarreraEstudiante ce ON e.id = ce.estudiante_Id "
+						+ "FROM Estudiante e " + "JOIN Carrera_Estudiante ce ON e.id = ce.estudiante_Id "
 						+ "JOIN Carrera c ON c.id = ce.carrera_Id " + "WHERE c.id = ?1 AND e.ciudadResidencia = ?2",
 						
 				EstudianteCarreraDTO.class).setParameter(1, idCarrera).setParameter(2, ciudad).getResultList();

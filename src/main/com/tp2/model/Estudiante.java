@@ -20,7 +20,7 @@ public class Estudiante {
     private int dni;
     private String ciudadResidencia;
     private int nroLibreta;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "carrera_estudiante",
             joinColumns = @JoinColumn(name = "estudiante_id"),

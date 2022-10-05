@@ -5,14 +5,14 @@ import java.time.LocalDate;
 public class CarreraReporteDTO {
 
 	private String nombreCarrera;
-	private LocalDate ingreso;
-	private LocalDate graduacion;
+	private int ingreso;
+	private boolean graduacion;
 	private int DNI;
 	private int numLibreta;
 	private String apellido;
 	private String nombreEstudiante;
 	
-	public CarreraReporteDTO(String nombreCarrera, LocalDate ingreso, LocalDate graduacion, int dNI, int numLibreta,
+	public CarreraReporteDTO(String nombreCarrera, int ingreso, boolean graduacion, int dNI, int numLibreta,
 			String apellido, String nombreEstudiante) {
 		this.nombreCarrera = nombreCarrera;
 		this.ingreso = ingreso;
@@ -31,19 +31,19 @@ public class CarreraReporteDTO {
 		this.nombreCarrera = nombreCarrera;
 	}
 
-	public LocalDate getIngreso() {
+	public int getIngreso() {
 		return ingreso;
 	}
 
-	public void setIngreso(LocalDate ingreso) {
+	public void setIngreso(int ingreso) {
 		this.ingreso = ingreso;
 	}
 
-	public LocalDate getGraduacion() {
+	public boolean getGraduacion() {
 		return graduacion;
 	}
 
-	public void setGraduacion(LocalDate graduacion) {
+	public void setGraduacion(boolean graduacion) {
 		this.graduacion = graduacion;
 	}
 
