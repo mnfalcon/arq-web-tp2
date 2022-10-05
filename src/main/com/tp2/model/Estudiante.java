@@ -35,5 +35,18 @@ public class Estudiante {
         this.ciudadResidencia = ciudadResidencia;
         this.nroLibreta = nroLibreta;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "id=" + id +
+                ", nombres='" + nombres + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", genero=" + genero +
+                ", dni=" + dni +
+                ", ciudadResidencia='" + ciudadResidencia + '\'' +
+                ", nroLibreta=" + nroLibreta +
+                '}';
+    }
 }

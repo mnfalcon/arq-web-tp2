@@ -37,4 +37,12 @@ public class Carrera {
     public void removeEstudiante(Estudiante e) {
         estudiantes.remove(e);
     }
+
+    @Override
+    public String toString() {
+        return "Carrera{" +
+                "id=" + id +
+                ", nombreCarrera='" + nombreCarrera + '\'' +
+                '}';
+    }
 }

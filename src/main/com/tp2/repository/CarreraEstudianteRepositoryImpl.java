@@ -22,9 +22,9 @@ public class CarreraEstudianteRepositoryImpl implements CarreraEstudianteReposit
 	@Override
 	public List<EstudianteCarreraDTO> getEstudiantesByCarreraAndCiudad(Long idCarrera, String ciudad) {
 		List<EstudianteCarreraDTO> estudiantes = this.em.createQuery(
-				"SELECT new com.tp2.dto.EstudianteCarreraDTO(e.DNI, e.nombres, e.apellido, e.ciudadResidencia, c.nombreCarrera) "
-						+ "FROM Estudiante e " + "JOIN Carrera_Estudiante ce ON e.id = ce.estudiante_Id "
-						+ "JOIN Carrera c ON c.id = ce.carrera_Id " + "WHERE c.id = ?1 AND e.ciudadResidencia = ?2",
+				"SELECT new com.tp2.dto.EstudianteCarreraDTO(e.dni, e.nombres, e.apellido, e.ciudadResidencia, c.nombreCarrera) "
+						+ "FROM Estudiante e " + "JOIN CarreraEstudiante ce ON e.id = ce.estudiante.id "
+						+ "JOIN Carrera c ON c.id = ce.carrera.id " + "WHERE c.id = ?1 AND e.ciudadResidencia = ?2",
 						
 				EstudianteCarreraDTO.class).setParameter(1, idCarrera).setParameter(2, ciudad).getResultList();
 
@@ -53,7 +53,7 @@ public class CarreraEstudianteRepositoryImpl implements CarreraEstudianteReposit
 	public List<CarreraReporteDTO> getCarreraReporte() {
 		TypedQuery<CarreraReporteDTO> q = this.em.createQuery(
 		"SELECT new com.tp2.dto.CarreraReporteDTO (c.nombreCarrera, ce.antiguedad, ce.egreso, e.dni, e.nroLibreta, e.nombres, e.apellido )" +
-		"FROM Carrera c JOIN CarreraEstudiante ce ON c.id = ce.carrera_id JOIN Estudiante e ON ce.estudiante_id=e.id " +
+		"FROM Carrera c JOIN CarreraEstudiante ce ON c.id = ce.carrera.id JOIN Estudiante e ON ce.estudiante.id=e.id " +
 		"ORDER BY c.nombreCarrera, ce.antiguedad", CarreraReporteDTO.class);
 		return q.getResultList();
 	}
