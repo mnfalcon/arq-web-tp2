@@ -12,7 +12,7 @@ public class CarreraReporteDTO {
 	private String apellido;
 	private String nombreEstudiante;
 	
-	public CarreraReporteDTO(String nombreCarrera, int ingreso, boolean graduacion, int dNI, int numLibreta,
+	public CarreraReporteDTO(String nombreCarrera, int ingreso, boolean graduacion, int DNI, int numLibreta,
 			String apellido, String nombreEstudiante) {
 		this.nombreCarrera = nombreCarrera;
 		this.ingreso = ingreso;

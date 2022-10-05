@@ -44,19 +44,21 @@ public class CarreraEstudianteRepositoryImpl implements CarreraEstudianteReposit
 		return q.getResultList();
 	}
 
+
 	//Generar un reporte de las carreras, que para cada carrera incluya información de los
 	//inscriptos y egresados por año. Se deben ordenar las carreras alfabéticamente, y presentar
 	 //los años de manera cronológica
+	//(c.nombreCarrera, ce.antiguedad, ce.egreso, e.nombres, e.apellido, e.dni, e.nroLibreta )
 	@Override
 	public List<CarreraReporteDTO> getCarreraReporte() {
 		TypedQuery<CarreraReporteDTO> q = this.em.createQuery(
-		"SELECT new com.tp2.CarreraReporteDTO (c.nombreCarrera, e.nombres, e.apellido, e.dni, e.nroLibreta, ce.fechaIngreso, ce.fechaEgreso)" + 
-		"FROM Carrera c JOIN CarreraEstudiante ce ON c.id = ce.carrera_Id JOIN Estudiante e ON ce.estudiante_Id=e.id " +  
-		"ORDER BY c.nombreCarrera, ce.fechaIngreso", CarreraReporteDTO.class);
+		"SELECT new com.tp2.dto.CarreraReporteDTO (c.nombreCarrera, ce.antiguedad, ce.egreso, e.dni, e.nroLibreta, e.nombres, e.apellido )" +
+		"FROM Carrera c JOIN CarreraEstudiante ce ON c.id = ce.carrera_id JOIN Estudiante e ON ce.estudiante_id=e.id " +
+		"ORDER BY c.nombreCarrera, ce.antiguedad", CarreraReporteDTO.class);
 		return q.getResultList();
 	}
 	
-	
+
 	
 
 	

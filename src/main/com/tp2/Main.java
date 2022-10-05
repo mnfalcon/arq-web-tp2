@@ -110,8 +110,8 @@ public class Main {
         log.info("******** carreras ordenados por cantidad de inscriptos (2g) ********");
         log.info(carreraEstudianteRepository.getEstudiantesByCarreraAndCiudad(1l,"CABA").toString());
 
-        log.info("******** carreras ordenados por cantidad de inscriptos (3) ********");
-        log.info(carreraEstudianteRepository.getCarreraReporte().toString());
+        //log.info("******** carreras ordenados por cantidad de inscriptos (3) ********");
+        //log.info(carreraEstudianteRepository.getCarreraReporte().toString());
 
 
 
