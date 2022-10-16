@@ -51,4 +51,66 @@ public class Estudiante {
                 ", nroLibreta=" + nroLibreta +
                 '}';
     }
+
+	public String getNombres() {
+		return nombres;
+	}
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public char getGenero() {
+		return genero;
+	}
+
+	public void setGenero(char genero) {
+		this.genero = genero;
+	}
+
+	public String getCiudadResidencia() {
+		return ciudadResidencia;
+	}
+
+	public void setCiudadResidencia(String ciudadResidencia) {
+		this.ciudadResidencia = ciudadResidencia;
+	}
+
+	public List<Carrera> getCarreras() {
+		return carreras;
+	}
+
+	public void setCarreras(List<Carrera> carreras) {
+		this.carreras = carreras;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public int getDni() {
+		return dni;
+	}
+
+	public int getNroLibreta() {
+		return nroLibreta;
+	}
+
+	
 }
