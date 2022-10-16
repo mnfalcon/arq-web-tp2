@@ -9,7 +9,9 @@ import javax.persistence.TypedQuery;
 import com.tp2.dto.CarreraInscriptosDTO;
 import com.tp2.dto.CarreraReporteDTO;
 import com.tp2.dto.EstudianteCarreraDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CarreraEstudianteRepositoryImpl implements CarreraEstudianteRepository{
 
 	   private EntityManager em;

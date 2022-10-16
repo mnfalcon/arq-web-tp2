@@ -1,5 +1,6 @@
 package com.tp2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @Entity
 @Data /* Esta anotacion genera getters, setters, etc */
 @NoArgsConstructor
+@JsonIgnoreProperties("carreras")
 public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

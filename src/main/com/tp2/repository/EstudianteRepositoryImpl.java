@@ -1,12 +1,13 @@
 package com.tp2.repository;
 
-import com.tp2.model.Carrera;
 import com.tp2.model.Estudiante;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+@Component
 public class EstudianteRepositoryImpl implements EstudianteRepository {
     private EntityManager em;
 
@@ -38,6 +39,13 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e WHERE e.genero = :genero", Estudiante.class);
         q.setParameter("genero", genero);
         return q.getResultList();
+    }
+
+    public Estudiante saveEstudiante(Estudiante estudiante) {
+        em.getTransaction().begin();
+        em.persist(estudiante);
+        em.getTransaction().commit();
+        return estudiante;
     }
 
 }
