@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Component
+@Component("estudianteRepository")
 public class EstudianteRepositoryImpl implements EstudianteRepository {
     private EntityManager em;
 
@@ -41,6 +41,7 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         return q.getResultList();
     }
 
+    @Override
     public Estudiante saveEstudiante(Estudiante estudiante) {
         em.getTransaction().begin();
         em.persist(estudiante);

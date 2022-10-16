@@ -11,4 +11,6 @@ public interface EstudianteRepository {
     public List<Estudiante> getEstudiantesByName();
     public Estudiante getEstudianteByLibreta(Long id);
     public List<Estudiante> getEstudiantesByGenero(char genero);
+
+    public Estudiante saveEstudiante(Estudiante estudiante);
 }
