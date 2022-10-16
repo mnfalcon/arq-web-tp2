@@ -5,6 +5,7 @@ import java.util.List;
 import com.tp2.dto.CarreraInscriptosDTO;
 import com.tp2.dto.CarreraReporteDTO;
 import com.tp2.dto.EstudianteCarreraDTO;
+import com.tp2.model.CarreraEstudiante;
 
 public interface CarreraEstudianteRepository {
 	

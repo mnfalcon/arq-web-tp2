@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 import com.tp2.dto.CarreraInscriptosDTO;
 import com.tp2.dto.CarreraReporteDTO;
 import com.tp2.dto.EstudianteCarreraDTO;
+import com.tp2.model.CarreraEstudiante;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -60,7 +61,12 @@ public class CarreraEstudianteRepositoryImpl implements CarreraEstudianteReposit
 		return q.getResultList();
 	}
 	
-
+	public CarreraEstudiante saveCarreraEstudiante(CarreraEstudiante ce) {
+		em.getTransaction().begin();
+		em.persist(ce);
+		em.getTransaction().commit();
+		return ce;
+	}
 	
 
 	

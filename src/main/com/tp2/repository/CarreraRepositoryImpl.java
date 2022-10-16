@@ -23,4 +23,11 @@ public class CarreraRepositoryImpl implements CarreraRepository {
     public List<Carrera> getCarreras() {
         return null;
     }
+
+    public Carrera saveCarrera(Carrera c) {
+        em.getTransaction().begin();
+        em.persist(c);
+        em.getTransaction().commit();
+        return c;
+    }
 }
