@@ -40,6 +40,7 @@ public class EstudianteRepositoryImpl implements EstudianteRepository{
         q.setParameter("genero", genero);
         return q.getResultList();
     }
+
     @Override
     public Estudiante saveEstudiante(Estudiante estudiante) {
         em.getTransaction().begin();

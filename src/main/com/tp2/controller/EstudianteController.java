@@ -15,7 +15,7 @@ public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
 
-    @GetMapping ("/all")
+    @GetMapping
     public List<Estudiante> getEstudiantes() {
         return estudianteService.getEstudiantes();
     }
@@ -25,18 +25,18 @@ public class EstudianteController {
         return estudianteService.saveEstudiante(estudiante);
     }
 	
-	@GetMapping("/allByName")
+	@GetMapping("/sortedByName")
 	public List<Estudiante> getEstudiantesByName() {
 		return estudianteService.getEstudiantesByName();
 	}
 	
-	@GetMapping("/allByGenero{genero}")
-	public List<Estudiante> getEstudiantesByGenero(@PathVariable char genero) {
+	@GetMapping
+	public List<Estudiante> getEstudiantesByGenero(@RequestParam("genero") char genero) {
 		return estudianteService.getEstudiantesByGenero(genero);
 	}
 	
-	@GetMapping("/numeroLibreta{numeroLibreta}")
-	public Estudiante getEstudianteByLibreta(@PathVariable Long numeroLibreta) {
+	@GetMapping
+	public Estudiante getEstudianteByLibreta(@RequestParam("numeroLibreta") Long numeroLibreta) {
 		return estudianteService.getEstudianteByLibreta(numeroLibreta);
 	}
 }
